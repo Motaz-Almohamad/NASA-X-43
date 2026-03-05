@@ -3,8 +3,8 @@ import { subHeroConfig } from '../config';
 
 const useCountUp = (end: number, duration: number = 2000, start: boolean = false) => {
   const [count, setCount] = useState(0);
-  const rafRef = useRef<number>();
-
+const rafRef = useRef<number | undefined>(undefined);
+  
   useEffect(() => {
     if (!start) return;
     const startTime = performance.now();
